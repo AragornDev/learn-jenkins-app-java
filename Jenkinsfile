@@ -2,9 +2,17 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Build') {
+            agent {
+                docker {
+                    image 'openjdk:17-alpine'
+                }
+            }
             steps {
-                echo 'Hello World'
+                sh '''
+                    java -version
+                    ls -la
+                '''
             }
         }
     }
