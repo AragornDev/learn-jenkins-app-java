@@ -5,13 +5,15 @@ pipeline {
         stage('Build') {
             agent {
                 docker {
-                    image 'openjdk:17-alpine'
+                    image 'maven:3.9.6-eclipse-temurin-17-alpine'
                 }
             }
             steps {
                 sh '''
-                    java -version
                     ls -la
+                    java -version
+                    javac -version
+                    mvn -version
                 '''
             }
         }
