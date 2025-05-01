@@ -15,7 +15,7 @@ pipeline {
                     javac -version
                     mvn -version
                     mvn dependency:tree
-                    mvn clean verify --no-transfer-progress
+                    mvn clean verify --no-transfer-progress -X
                 '''
             }
         }
