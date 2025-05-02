@@ -28,7 +28,7 @@ pipeline {
             }
             steps {
                 sh '''
-                    test -f target/com.example.restservice.greeting.GreetingControllerTests.txt
+                    test -f target/surefire-reports/com.example.restservice.greeting.GreetingControllerTests.txt
                     mvn clean test
                 '''
             }            
