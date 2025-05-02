@@ -35,7 +35,7 @@ pipeline {
 
     post {
         always {
-            junit 'test-results/junit.xml'
+            junit 'target/surfire-reports/TEST-com.example.restservice.greeting.GreetingControllerTests.xml'
         }
     }
 }
