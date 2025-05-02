@@ -15,6 +15,7 @@ pipeline {
                     java -version
                     javac -version
                     mvn -version
+                    mvn clean verify --no-transfer-progress -X
                 '''
             }
         }
@@ -27,7 +28,8 @@ pipeline {
             }
             steps {
                 sh '''
-                    mvn clean verify --no-transfer-progress -X
+                    test -f target/com.example.restservice.greeting.GreetingControllerTests.txt
+                    mvn clean test
                 '''
             }            
         }
